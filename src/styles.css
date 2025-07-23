@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@import "primeicons/primeicons.css";
+@plugin "tailwindcss-primeui";
+
+
+html,
+body {
+  font-family: "Public Sans", "Bebas Neue", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #f4f7fa;
+  color: #475569;
+  line-height: 1.25rem;
+}
+
+.theme-17 {
+  --color-theme-1: rgb(15 23 42);
+  --color-theme-2: rgb(30 41 59);
+  --color-primary: rgb(15 23 42);
+  --color-secondary: rgb(226 232 240);
+  --color-success: rgb(13 148 136);
+  --color-info: rgb(8 145 178);
+  --color-warning: rgb(202 138 4);
+  --color-pending: rgb(194 65 12);
+  --color-danger: rgb(185 28 28);
+  --color-light: rgb(241 245 249);
+  --color-dark: rgb(30 41 59)
+}
+
+.theme-17.dark {
+  --color-theme-1-dark: rgb(51 65 85);
+  --color-theme-2-dark: rgb(30 41 59);
+  --color-primary-dark: rgb(51 65 85)
+}
+
+@theme {
+  /* FONT */
+  --font-robot: "Public Sans", sans-serif;
+  --font-bebasNeue: "Bebas Neue", sans-serif;
+
+  /* COLORS */
+  --color-theme-1: var(--color-theme-1);
+  --color-theme-2: var(--color-theme-2);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-success: var(--color-success);
+  --color-info: var(--color-info);
+  --color-warning: var(--color-warning);
+  --color-pending: var(--color-pending);
+  --color-danger: var(--color-danger);
+  --color-light: var(--color-light);
+  --color-dark: var(--color-dark);
+
+  --color-theme-1-dark: var(--color-theme-1-dark);
+  --color-theme-2-dark: var(--color-theme-2-dark);
+  --color-primary-dark: var(--color-primary-dark);
+
+
+  /* BACKGROUND IMAGES */
+  /*--background-image-auth1: url("../public/auth-img1.webp");*/
+
+
+  --background-image-gradient-100: linear-gradient(
+    to left,
+    rgb(12, 74, 110),
+    rgba(3, 4, 94)
+  );
+
+  /* SHADOWS */
+  --shadow-100: 0px 1px 3px 0px rgba(16, 24, 40, 0.1),
+}
