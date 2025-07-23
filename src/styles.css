@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @import "primeicons/primeicons.css";
+
 @plugin "tailwindcss-primeui";
 
 
@@ -14,25 +15,24 @@ body {
   line-height: 1.25rem;
 }
 
-.theme-17 {
+:root {
   --color-theme-1: rgb(15 23 42);
   --color-theme-2: rgb(30 41 59);
   --color-primary: rgb(15 23 42);
   --color-secondary: rgb(226 232 240);
+
   --color-success: rgb(13 148 136);
   --color-info: rgb(8 145 178);
   --color-warning: rgb(202 138 4);
   --color-pending: rgb(194 65 12);
   --color-danger: rgb(185 28 28);
   --color-light: rgb(241 245 249);
-  --color-dark: rgb(30 41 59)
-}
-
-.theme-17.dark {
+  --color-dark: rgb(30 41 59);
   --color-theme-1-dark: rgb(51 65 85);
   --color-theme-2-dark: rgb(30 41 59);
-  --color-primary-dark: rgb(51 65 85)
+  --color-primary-dark: rgb(51 65 85);
 }
+
 
 @theme {
   /* FONT */
@@ -58,8 +58,7 @@ body {
 
 
   /* BACKGROUND IMAGES */
-  /*--background-image-auth1: url("../public/auth-img1.webp");*/
-
+  --background-image-overlay: url("../public/bg-overlay.svg");
 
   --background-image-gradient-100: linear-gradient(
     to left,
@@ -69,4 +68,29 @@ body {
 
   /* SHADOWS */
   --shadow-100: 0px 1px 3px 0px rgba(16, 24, 40, 0.1),
+}
+
+
+.p-inputtext {
+  @apply block w-full py-3.5 px-4 rounded-lg text-primary bg-white border-slate-300 text-sm shadow-sm transition duration-200 ease-in-out placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary/20 focus:border-primary/40;
+}
+
+.auth-main {
+  @apply bg-gradient-to-r from-theme-1 to-theme-2 lg:bg-none lg:bg-[#f4f7fa] lg:before:bg-none before:absolute before:bg-overlay before:bg-cover before:w-full before:h-full;
+}
+
+
+@media (max-width: 1024px) {
+  .auth-fields-container {
+    background-color: white;
+    border-radius: 24px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+  }
+  .auth-main-grid {
+    align-items: center;
+    justify-content: center;
+  }
 }

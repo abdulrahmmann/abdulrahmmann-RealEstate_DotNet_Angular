@@ -1,0 +1,83 @@
+<main class="w-full min-h-screen auth-main">
+  <div class="h-[calc(100vh - 40px)] relative top-2.5 mx-2.5 overflow-auto" style="height: calc(100vh - 20px)">
+    <div class="grid grid-cols-12 h-full auth-main-grid">
+      <div class="col-span-12 lg:col-span-5 2xl:col-span-4 flex items-center justify-center px-4 sm:px-14 py-14 lg:p-0 auth-fields-container">
+        <div class="px-4 max-w-[400px] w-full mx-auto pt-4">
+          <!-- LOGO -->
+          <div class="rounded-[0.8rem] size-16 border border-primary/30 flex items-center justify-center">
+            <div
+              class="relative size-[60px] flex items-center justify-center  rounded-[0.6rem] bg-gradient-to-b from-theme-1/90 to-theme-2/90 bg-white">
+              <div class="w-[32px] h-[32px] relative -rotate-45 [&_div]:bg-white">
+                <div class="absolute w-[20%] left-0 inset-y-0 my-auto rounded-full opacity-50 h-[75%] "></div>
+                <div class="absolute w-[20%] inset-0 m-auto h-[120%] rounded-full"></div>
+                <div class="absolute w-[20%] right-0 inset-y-0 my-auto rounded-full opacity-50 h-[75%]"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 lg:mt-10">
+            <h3 class="text-2xl font-medium">Sign In</h3>
+            <div class="mt-2.5 text-slate-600">
+              Don't have an account?
+              <a routerLink="/user-register" class="font-medium text-primary underline">Sign Up</a>
+            </div>
+
+            <div
+              [ngClass]="[messageIsVisible? 'flex': 'hidden']"
+              class="relative border text-primary flex items-center px-4 py-3 my-7 bg-primary/5 border-primary/20 rounded-[0.6rem] leading-[1.7]">
+              <div class="mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-lightbulb stroke-[0.8] w-7 h-7 fill-primary/10">
+                  <path
+                    d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+                  <path d="M9 18h6"></path>
+                  <path d="M10 22h4"></path>
+                </svg>
+              </div>
+              <div class="mr-8 text-sm leading-6">Welcome to <span class="font-medium">Tailwise</span> demo! Simply click
+                <span class="font-medium">Sign In</span> to explore and access our documentation.
+              </div>
+              <button
+                (click)="hideMessageBox()"
+                class="py-2 px-3 absolute right-0 my-auto mr-2 text-primary cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-x stroke-[1] w-5 h-5">
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="mt-6">
+              <div class="flex flex-col items-start">
+                <label for="email" class="mb-2 text-sm">Email</label>
+                <input pInputText id="email" type="email" name="email" placeholder="denzel.washington@left4code.com"/>
+              </div>
+
+              <div class="flex flex-col items-start mt-4">
+                <label for="email" class="mb-2 text-sm">Password</label>
+                <p-password [toggleMask]="true" class="w-full" placeholder="************"/>
+              </div>
+
+              <div class="flex items-center justify-between mt-4 text-xs text-slate-500 sm:text-sm">
+                <a routerLink="forgot-password" class="underline ml-auto">Forgot Password?</a>
+              </div>
+
+              <div class="mt-5 xl:mt-8">
+                <button class="w-full bg-primary hover:bg-primary/90 text-white text-base p-3 cursor-pointer transition duration-200 border shadow-sm rounded-3xl focus:ring-4 focus:ring-primary/20 focus:border-primary/40">Sign In</button>
+
+                <button class="mt-3 w-full bg-white/70 hover:bg-secondary/10 text-slate-500 text-base p-3 cursor-pointer transition duration-200 border shadow-sm rounded-3xl focus:ring-4 focus:ring-primary/20 focus:border-primary/40">Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden lg:block lg:col-span-7 2xl:col-span-8 bg-indigo-500">
+        0
+      </div>
+    </div>
+  </div>
+</main>
