@@ -1,20 +1,20 @@
 import {Component, inject} from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
-import {NgClass} from '@angular/common';
 import {InputText} from 'primeng/inputtext';
 import {Password} from 'primeng/password';
+import {Router, RouterLink} from '@angular/router';
+import {NgClass} from '@angular/common';
 
 @Component({
-  selector: 'app-signin',
+  selector: 'app-signup',
   imports: [
-    RouterLink,
-    NgClass,
     InputText,
     Password,
+    RouterLink,
+    NgClass
   ],
-  templateUrl: './signin.html',
+  templateUrl: './signup.html',
 })
-export class Signin {
+export class Signup {
   private readonly router = inject(Router);
 
   messageIsVisible: boolean = true;
@@ -23,7 +23,7 @@ export class Signin {
     this.messageIsVisible = false;
   }
 
-  navigateToSignUp(): void {
-    this.router.navigate(["/user-register"]);
+  navigateToSignIn(): void {
+    this.router.navigate(["/user-login"]);
   }
 }

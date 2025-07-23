@@ -6,4 +6,14 @@ export const routes: Routes = [
     loadComponent: () => import('./Features/Authentication/pages/signin/signin')
       .then((mod) => mod.Signin)
   },
+  {
+    path: 'user-register',
+    loadComponent: () => import('./Features/Authentication/pages/signup/signup')
+      .then((mod) => mod.Signup)
+  },
+  {
+    path: 'forgot-password',
+    loadComponent: () => import('./Features/Authentication/pages/forgot-password/forgot-password')
+      .then((mod) => mod.ForgotPassword)
+  }
 ];

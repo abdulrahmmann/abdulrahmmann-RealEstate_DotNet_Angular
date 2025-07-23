@@ -78,37 +78,25 @@ body {
   @apply block w-full py-3.5 px-4 rounded-lg text-primary bg-white border-slate-300 text-sm shadow-sm transition duration-200 ease-in-out placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary/20 focus:border-primary/40;
 }
 
-.auth-main {
-  @apply bg-gradient-to-r from-theme-1 to-theme-2 lg:bg-none lg:bg-[#f4f7fa] lg:before:bg-none before:absolute before:bg-overlay before:bg-cover before:w-full before:h-full;
+.box {
+  box-shadow: 0 3px 5px #0000000b;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: .6rem;
+  position: relative
 }
 
-
-@media (max-width: 1024px) {
-  .auth-fields-container {
-    background-color: white;
-    border-radius: 24px;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    height: fit-content;
-  }
-  .auth-main-grid {
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.auth-carousel .p-carousel-indicator-list {
+.box--stacked:before {
+  content: "";
+  z-index: -1;
+  box-shadow: 0 1px 2px #0000000d;
+  height: 100%;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
   position: absolute;
-  bottom: 32px;
-  right: 32px;
-}
-
-.p-carousel-indicator-button {
-  width: 50px !important;
-  background: #A6A6A6 !important;
-}
-
-.p-carousel-indicator-active .p-carousel-indicator-button {
-  background: white !important;
+  border-radius: .5rem;
+  left: .875rem;
+  right: .875rem;
+  top: 0;
+  margin-top: .75rem
 }
