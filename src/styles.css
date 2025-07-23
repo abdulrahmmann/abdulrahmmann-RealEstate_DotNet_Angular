@@ -59,6 +59,9 @@ body {
 
   /* BACKGROUND IMAGES */
   --background-image-overlay: url("../public/bg-overlay.svg");
+  --background-image-auth1: url("../public/bg-auth-1.jpg");
+  --background-image-auth2: url("../public/bg-auth-2.jpg");
+  --background-image-auth3: url("../public/bg-auth-3.jpg");
 
   --background-image-gradient-100: linear-gradient(
     to left,
@@ -93,4 +96,19 @@ body {
     align-items: center;
     justify-content: center;
   }
+}
+
+.auth-carousel .p-carousel-indicator-list {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+}
+
+.p-carousel-indicator-button {
+  width: 50px !important;
+  background: #A6A6A6 !important;
+}
+
+.p-carousel-indicator-active .p-carousel-indicator-button {
+  background: white !important;
 }
