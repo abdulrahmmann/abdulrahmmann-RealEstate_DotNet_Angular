@@ -2,12 +2,14 @@ import {Component, inject} from '@angular/core';
 import {InputText} from "primeng/inputtext";
 import {Router} from "@angular/router";
 import {NgClass} from '@angular/common';
+import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-forgot-password',
   imports: [
     InputText,
-    NgClass
+    NgClass,
+    ReactiveFormsModule
   ],
   templateUrl: './forgot-password.html',
 })
@@ -21,6 +23,16 @@ export class ForgotPassword {
   }
 
   navigateToSignin(): void {
-    this.router.navigate(["/forgot-password"]);
+    this.router.navigate(["/user-login"]);
+  }
+
+  resetForm = new FormGroup({
+    ResetEmail: new FormControl(),
+  });
+
+  onSubmit(): void {
+    const email: string = this.resetForm.controls.ResetEmail.value;
+
+    console.log("Email: ", email)
   }
 }
