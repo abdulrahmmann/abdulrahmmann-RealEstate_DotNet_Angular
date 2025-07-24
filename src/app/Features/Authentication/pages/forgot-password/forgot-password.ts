@@ -3,13 +3,15 @@ import {InputText} from "primeng/inputtext";
 import {Router} from "@angular/router";
 import {NgClass} from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {ScrollPanel} from 'primeng/scrollpanel';
 
 @Component({
   selector: 'app-forgot-password',
   imports: [
     InputText,
     NgClass,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScrollPanel
   ],
   templateUrl: './forgot-password.html',
 })

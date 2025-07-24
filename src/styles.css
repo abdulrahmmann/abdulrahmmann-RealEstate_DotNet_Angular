@@ -77,6 +77,16 @@ body {
 .p-inputtext {
   @apply block w-full py-3.5 px-4 rounded-lg text-primary bg-white border-slate-300 text-sm shadow-sm transition duration-200 ease-in-out placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary/20 focus:border-primary/40;
 }
+.p-select {
+  @apply  w-full py-1.5 rounded-lg text-primary bg-white border-slate-300 text-sm shadow-sm transition duration-200 ease-in-out placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary/20 focus:border-primary/40;
+}
+.p-select-label {
+  @apply text-primary text-sm;
+}
+
+.p-select .p-component {
+  @apply mt-1
+}
 
 .box {
   box-shadow: 0 3px 5px #0000000b;
@@ -102,6 +112,39 @@ body {
 }
 
 .signup-scroll.p-scrollpanel {
-  max-height: calc(100vh - 140px);
+  max-height: calc(100vh - 0px);
+  height: 100vh;
 }
 
+.bg-auth-overlay {
+  @apply bg-gradient-to-b from-theme-1 to-theme-2 before:absolute before:bg-overlay before:bg-right before:bg-no-repeat before:bg-cover before:w-full before:h-full
+}
+
+.auth-fields-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 40px);
+  top: 1.25rem;
+  right: -1.25rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+@media (max-width: 768px) {
+  .auth-fields-container {
+    max-width: calc(100% - 32px);
+    border-radius: 24px;
+  }
+  .signup-scroll.p-scrollpanel {
+    height: calc(100vh - 20px);
+  }
+  .auth-fields-container::before {
+    display: none;
+  }
+}
+
+.signup-scroll .p-scrollpanel-bar {
+  background-color: rgba(30, 41, 59, 0.27);
+}

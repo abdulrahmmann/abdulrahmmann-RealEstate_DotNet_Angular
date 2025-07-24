@@ -1,11 +1,11 @@
-<main class="w-full h-screen overflow-hidden">
-  <div class="relative min-h-screen bg-auth3 bg-no-repeat bg-cover bg-center w-full">
-    <div class="absolute top-0 left-0 w-full h-full bg-black/60"></div>
-    <div class="min-h-screen flex items-center justify-center">
-      <div class="relative max-w-[500px] w-full bg-white shadow-lg rounded-xl">
+<main class="w-full h-screen overflow-hidden bg-auth-overlay">
+  <div class="relative min-h-screen w-full">
+    <div class="flex justify-center my-5 md:my-0 md:grid grid-cols-12">
 
-        <p-scrollpanel class="signup-scroll">
-          <div class="px-8 py-6">
+      <div
+        class="auth-fields-container pr-2 md:col-span-6 lg:col-span-4 relative w-full bg-white shadow-lg rounded-br-3xl rounded-tr-3xl">
+        <p-scrollpanel class="signup-scroll py-3">
+          <div class="px-8 pt-14 pb-4 max-w-[650px] m-auto">
             <!-- LOGO -->
             <div class="rounded-[0.8rem] size-16 border border-primary/30 flex items-center justify-center">
               <div
@@ -54,7 +54,7 @@
               </div>
 
               <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" class="mt-4">
-                <div  class="flex flex-col items-start">
+                <div class="flex flex-col items-start">
                   <label for="login-email" class="mb-2 text-sm">Email</label>
                   <input
                     pInputText
@@ -99,6 +99,54 @@
           </div>
         </p-scrollpanel>
       </div>
+
+      <div class="hidden md:block md:col-span-6 lg:col-span-8">
+        <div class="h-full hidden md:flex flex-col justify-center ml-16 mr-6 xl:ml-28 xl:mr-10 2xl:ml-36 2xl:mr-14">
+          <p class="leading-[1.4] md:text-2xl xl:text-5xl font-medium xl:leading-[1.2] text-white">
+            Embrace Excellence <br/> in Real Estate Solutions
+          </p>
+
+          <p class="mt-5 text-base leading-relaxed xl:text-lg text-white/70">
+            Unlock the full potential of PropertyPro — the all-in-one platform where real estate agents, investors,
+            and property managers seamlessly manage listings, market properties, and monitor performance in real time.
+            Join a growing network of real estate professionals and transform the way you do business.
+          </p>
+
+          <div class="flex flex-col gap-3 mt-10 xl:items-center xl:flex-row">
+            <div class="flex items-center">
+              <div class="w-9 h-9 2xl:w-11 2xl:h-11 image-fit zoom-in">
+                <img src="/user.jpg" alt="user image" class="cursor-pointer rounded-full border-[3px] border-white/50"/>
+              </div>
+              <div class="-ml-3 w-9 h-9 2xl:w-11 2xl:h-11 image-fit zoom-in">
+                <img src="/user2.jpg" alt="user image"
+                     class="cursor-pointer rounded-full border-[3px] border-white/50"/>
+              </div>
+              <div class="-ml-3 w-9 h-9 2xl:w-11 2xl:h-11 image-fit zoom-in">
+                <img src="/user3.jpg" alt="user image"
+                     class="cursor-pointer rounded-full border-[3px] border-white/50"/>
+              </div>
+              <div class="-ml-3 w-9 h-9 2xl:w-11 2xl:h-11 image-fit zoom-in">
+                <img src="/user4.jpg" alt="user image"
+                     class="cursor-pointer rounded-full border-[3px] border-white/50"/>
+              </div>
+            </div>
+            <div class="text-base xl:ml-2 2xl:ml-3 text-white/70">Trusted by 7k+ professionals — start your real estate
+              journey today.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div
+    class="fixed bottom-0 right-0 z-50 flex items-center justify-center mb-5 mr-5 text-white rounded-full shadow-lg cursor-pointer w-14 h-14 bg-theme-1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         class="lucide lucide-settings stroke-[1] w-5 h-5 animate-spin">
+      <path
+        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </svg>
+  </div>
+
 </main>
