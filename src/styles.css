@@ -16,8 +16,8 @@ body {
 }
 
 :root {
-  --color-theme-1: rgb(15 23 42);
-  --color-theme-2: rgb(30 41 59);
+  --color-theme-1: rgba(15, 23, 42);
+  --color-theme-2: rgba(30, 41, 59);
   --color-primary: rgb(15 23 42);
   --color-secondary: rgb(226 232 240);
 
@@ -42,6 +42,10 @@ body {
   /* COLORS */
   --color-theme-1: var(--color-theme-1);
   --color-theme-2: var(--color-theme-2);
+
+  --color-theme-1-80: rgba(15, 23, 42, 0.90);
+  --color-theme-2-80: rgba(30, 41, 59, 0.90);
+
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-success: var(--color-success);
@@ -147,4 +151,46 @@ body {
 
 .signup-scroll .p-scrollpanel-bar {
   background-color: rgba(30, 41, 59, 0.27);
+}
+
+.dashboards-page {
+  @apply w-full h-full min-h-screen overflow-hidden relative bg-gradient-to-b from-slate-200/70 to-slate-50 before:absolute before:top-0 before:left-0 before:right-0 before:w-full before:h-[375px] before:bg-gradient-to-b before:from-theme-1-80 before:to-theme-2-80 after:absolute after:bg-overlay after:w-full after:h-[375px] after:top-0 after:left-0 after:right-0 after:bg-center after:bg-no-repeat after:bg-contain
+}
+
+.side-menu__link__icon {
+  stroke: #fff;
+  fill: #ffffff1a;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../public/bg-overlay.svg") right center no-repeat;
+  background-size: cover;
+}
+
+.side-menu__link {
+  display: flex;
+  align-items: center;
+  margin-bottom: .25rem;
+  border-radius: .6rem;
+  border: 1px solid transparent;
+  padding: .75rem .875rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,1,1);
+  transition-duration: .2s;
+}
+.side-menu__link--active {
+  background: #ffffff1a;
+  border-color: #ffffff05;
+  box-shadow: 0 2px 3px #0000000b;
+}
+
+.sidebar-scroll {
+  height: calc(100vh - 120px);
 }

@@ -1,0 +1,81 @@
+<aside
+  class="hidden lg:block lg:fixed z-20 left-4 top-4 bottom-4 bg-gradient-to-b from-theme-1 to-theme-2 rounded-lg duration-300 transition-[width] shadow-lg"
+  [ngClass]="sidebarExpanded ? 'w-[275px]' : 'w-[90px]'"
+  (mouseenter)="!isPinned && (isHovered = true)"
+  (mouseleave)="!isPinned && (isHovered = false)"
+>
+  <nav class="relative w-full h-full">
+    <!-- Sidebar Header -->
+    <div class="h-[65px] flex items-center justify-between px-5">
+      <!-- LOGO -->
+      <div class="flex items-center px-3">
+        <div
+          [ngClass]="[
+          isHovered? 'rotate-180': '', isPinned? 'rotate-180': ''
+          ]"
+          class="transition-all duration-300 relative size-5 flex items-center justify-center  rounded-[0.6rem] bg-gradient-to-b from-theme-1/90 to-theme-2/90 bg-white">
+          <div class="size-5 relative -rotate-45 [&_div]:bg-white">
+            <div class="absolute w-[20%] left-0 inset-y-0 my-auto rounded-full opacity-50 h-[75%] "></div>
+            <div class="absolute w-[20%] inset-0 m-auto h-[120%] rounded-full"></div>
+            <div class="absolute w-[20%] right-0 inset-y-0 my-auto rounded-full opacity-50 h-[75%]"></div>
+          </div>
+        </div>
+        <h3 [ngClass]="isHovered? 'flex': 'hidden'"
+            class="font-medium text-white text-sm ml-3.5 uppercase">Razor</h3>
+      </div>
+
+      <button
+        class="size-5 rounded-full flex items-center justify-center border border-white/60 cursor-pointer transition-all duration-150"
+        (click)="togglePin()"
+        [ngClass]="[isHovered? 'hidden 2xl:flex': 'hidden', isPinned? 'rotate-180': '']">
+        <i class="pi pi-arrow-right" style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 1px"></i>
+      </button>
+    </div>
+    <!-- Sidebar Header -->
+
+    <!-- Sidebar Body -->
+    <p-scrollpanel [style]="{ width: '100%' }" class="sidebar-scroll">
+      <ul class="px-4 flex flex-col items-start gap-1.5 overflow-auto">
+        @for (group of sidebarItems; track group.group) {
+
+          <!-- Group header -->
+          @if (sidebarExpanded) {
+          <li class="my-3">
+            <h3 class="text-xs font-light uppercase text-[#64748b] tracking-wider text-center whitespace-nowrap">
+              {{group.group}}
+            </h3>
+          </li>
+          } @else {
+          <li class="w-full my-3">
+            <h3 class="text-xs font-light uppercase text-[#64748b] tracking-wider text-center whitespace-nowrap">
+              ...
+            </h3>
+          </li>
+        }
+
+          <!-- Group items -->
+          @for (item of group.items; track item.Id) {
+            <li
+              class="group w-full py-3 px-3.5 hover:bg-[#ffffff1a] hover:border-2-[#ffffff05] cursor-pointer duration-300 transition-all rounded-lg"
+              (click)="setActive(item)"
+              [ngClass]="[
+            activeId === item.Id ? 'bg-[#ffffff1a] border-2-[#ffffff05] shadow-lg text-white/90' : ''
+          ]">
+              <a [routerLink]="item.route" class="w-full flex items-center">
+                <img [src]="item.icon" [alt]="item.Name"
+                     class="w-5 h-5 opacity-40 group-hover:opacity-100 duration-300 transition-all mx-[5px]"
+                     [ngClass]="[
+                   activeId === item.Id ? 'opacity-100' : 'opacity-40'
+                 ]"/>
+                <h3 class="ml-3 font-medium truncate text-sm group-hover:text-white/90 text-white/60 duration-300 transition-all capitalize"
+                    [ngClass]="[sidebarExpanded ? 'flex' : 'hidden']"
+                >{{ item.Name }}</h3>
+              </a>
+            </li>
+          }
+        }
+      </ul>
+    </p-scrollpanel>
+    <!-- Sidebar Body -->
+  </nav>
+</aside>
