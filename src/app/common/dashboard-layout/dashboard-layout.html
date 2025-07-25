@@ -8,18 +8,21 @@
 
     <app-header [isSidebarPinned]="isSidebarPinned" />
 
-    <div class="pt-10">
-      <div class="container mx-auto px-3 md:px-8 lg:pr-14 transition-all duration-200"
-           [ngClass]="[isSidebarPinned? 'lg:pl-[200px]': 'lg:pl-14']">
+    <div class="mt-28"
+         [ngClass]="isSidebarPinned? 'pl-[186px]': 'pl-0'">
+      <div class="2xl:container mx-auto transition-all duration-200 px-5 lg:pr-11 2xl:pl-5 2xl:pr-5"
+           >
 
-
+        <div class="bg-amber-200 py-20">
+          65
+        </div>
 
       </div>
     </div>
   </div>
 
   <div
-    class="fixed bottom-0 right-0 z-50 flex items-center justify-center mb-5 mr-5 text-white rounded-full shadow-lg cursor-pointer w-14 h-14 bg-theme-1">
+    class="fixed bottom-0 right-0 z-50 flex items-center justify-center mb-5 mr-5 text-white rounded-full shadow-lg cursor-pointer w-14 h-14 bg-gradient-to-r from-theme-1 to-theme-2-dark">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
          class="lucide lucide-settings stroke-[1] w-5 h-5 animate-spin">
@@ -29,3 +32,7 @@
     </svg>
   </div>
 </main>
+
+<!--position: relative;-->
+<!--padding-left: 95px;-->
+<!--right: -50px;-->

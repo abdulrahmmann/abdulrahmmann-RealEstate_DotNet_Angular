@@ -105,7 +105,7 @@ export const SidebarItems = [
         route: "/add-agency",
       },
       {
-        Id: 13,
+        Id: 14,
         Name: "Agency Departments",
         icon: "/sidebar/add-user.svg",
         route: "/agencies-departments",
@@ -117,25 +117,25 @@ export const SidebarItems = [
     group: "E-COMMERCE",
     items: [
       {
-        Id: 14,
+        Id: 15,
         Name: "Categories",
         icon: "/sidebar/category.svg",
         route: "/categories",
       },
       {
-        Id: 15,
+        Id: 16,
         Name: "Properties",
         icon: "/sidebar/property.svg",
         route: "/properties",
       },
       {
-        Id: 16,
+        Id: 17,
         Name: "Add Properties",
         icon: "/sidebar/add-product.svg",
         route: "/add-property",
       },
       {
-        Id: 17,
+        Id: 18,
         Name: "Reviews",
         icon: "/sidebar/reviews.svg",
         route: "/reviews",
@@ -147,19 +147,19 @@ export const SidebarItems = [
     group: "AUTHENTICATIONS",
     items: [
       {
-        Id: 18,
+        Id: 19,
         Name: "Login",
         icon: "/sidebar/login.svg",
         route: "/user-login",
       },
       {
-        Id: 19,
+        Id: 20,
         Name: "Register",
         icon: "/sidebar/register.svg",
         route: "/user-register",
       },
       {
-        Id: 20,
+        Id: 21,
         Name: "Change Password",
         icon: "/sidebar/register.svg",
         route: "/user-register",
@@ -171,25 +171,25 @@ export const SidebarItems = [
     group: "GENERAL SETTINGS",
     items: [
       {
-        Id: 21,
+        Id: 22,
         Name: "Profile Info",
         icon: "/sidebar/profile-info.svg",
         route: "/profile-info",
       },
       {
-        Id: 22,
+        Id: 23,
         Name: "Email Settings",
         icon: "/sidebar/email-settings.svg",
         route: "/email-settings",
       },
       {
-        Id: 23,
+        Id: 24,
         Name: "Security",
         icon: "/sidebar/security.svg",
         route: "/user-register",
       },
       {
-        Id: 24,
+        Id: 25,
         Name: "preferences",
         icon: "/sidebar/prefrences.svg",
         route: "/user-register",

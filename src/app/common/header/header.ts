@@ -20,6 +20,15 @@ export class Header {
     this.isDropdownActive = !this.isDropdownActive;
   }
 
+  toggleFullscreen() {
+    const elem = document.documentElement;
+    if (!document.fullscreenElement) {
+      elem.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+  }
+
   breadcrumbMap: Record<string, string> = {
     '/dashboard': 'Dashboards',
     '/crm': 'CRM',
