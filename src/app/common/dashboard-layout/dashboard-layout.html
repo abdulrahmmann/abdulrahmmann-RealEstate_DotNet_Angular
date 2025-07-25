@@ -1,11 +1,21 @@
 <main class="w-full h-full min-h-screen overflow-hidden relative dashboards-page">
 
   <!-- SIDEBAR -->
-  <app-sidebar />
+  <app-sidebar (pinnedChange)="handleSidebarPin($event)" />
   <!-- SIDEBAR -->
 
-  <div class="relative z-10">
+  <div class="relative z-10 lg:ml-[106px] mt-4">
 
+    <app-header [isSidebarPinned]="isSidebarPinned" />
+
+    <div class="pt-10">
+      <div class="container mx-auto px-3 md:px-8 lg:pr-14 transition-all duration-200"
+           [ngClass]="[isSidebarPinned? 'lg:pl-[200px]': 'lg:pl-14']">
+
+
+
+      </div>
+    </div>
   </div>
 
   <div

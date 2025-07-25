@@ -21,7 +21,7 @@
           </div>
         </div>
         <h3 [ngClass]="isHovered? 'flex': 'hidden'"
-            class="font-medium text-white text-sm ml-3.5 uppercase">Razor</h3>
+            class="font-medium text-white text-sm ml-3.5 uppercase">HURRICANE</h3>
       </div>
 
       <button
@@ -56,10 +56,10 @@
           <!-- Group items -->
           @for (item of group.items; track item.Id) {
             <li
-              class="group w-full py-3 px-3.5 hover:bg-[#ffffff1a] hover:border-2-[#ffffff05] cursor-pointer duration-300 transition-all rounded-lg"
+              class="group w-full py-3 px-3.5 hover:bg-[#1f2a3b] hover:border-2-[#ffffff05] cursor-pointer duration-300 transition-all rounded-lg"
               (click)="setActive(item)"
               [ngClass]="[
-            activeId === item.Id ? 'bg-[#ffffff1a] border-2-[#ffffff05] shadow-lg text-white/90' : ''
+            activeId === item.Id ? 'bg-[#1f2a3b] shadow-lg text-slate-50' : 'text-slate-400'
           ]">
               <a [routerLink]="item.route" class="w-full flex items-center">
                 <img [src]="item.icon" [alt]="item.Name"
@@ -67,7 +67,7 @@
                      [ngClass]="[
                    activeId === item.Id ? 'opacity-100' : 'opacity-40'
                  ]"/>
-                <h3 class="ml-3 font-medium truncate text-sm group-hover:text-white/90 text-white/60 duration-300 transition-all capitalize"
+                <h3 class="ml-3 font-medium truncate text-sm group-hover:text-white/90 duration-300 transition-all capitalize"
                     [ngClass]="[sidebarExpanded ? 'flex' : 'hidden']"
                 >{{ item.Name }}</h3>
               </a>

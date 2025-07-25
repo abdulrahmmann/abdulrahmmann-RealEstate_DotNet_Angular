@@ -54,13 +54,13 @@ export const SidebarItems = [
         Id: 7,
         Name: "User Departments",
         icon: "/sidebar/departments.svg",
-        route: "/user-departments",
+        route: "/users-departments",
       },
       {
         Id: 8,
         Name: "Add User",
         icon: "/sidebar/add-user.svg",
-        route: "/users",
+        route: "/add-users",
       },
     ]
   },
@@ -78,7 +78,7 @@ export const SidebarItems = [
         Id: 10,
         Name: "Add Agents",
         icon: "/sidebar/add-user.svg",
-        route: "/agents",
+        route: "/add-agents",
       },
       {
         Id: 11,
@@ -107,8 +107,8 @@ export const SidebarItems = [
       {
         Id: 13,
         Name: "Agency Departments",
-        icon: "/sidebar/departments.svg",
-        route: "/add-agency",
+        icon: "/sidebar/add-user.svg",
+        route: "/agencies-departments",
       },
     ]
   },
@@ -174,13 +174,13 @@ export const SidebarItems = [
         Id: 21,
         Name: "Profile Info",
         icon: "/sidebar/profile-info.svg",
-        route: "/user-register",
+        route: "/profile-info",
       },
       {
         Id: 22,
         Name: "Email Settings",
         icon: "/sidebar/email-settings.svg",
-        route: "/user-register",
+        route: "/email-settings",
       },
       {
         Id: 23,

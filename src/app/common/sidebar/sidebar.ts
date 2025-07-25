@@ -1,7 +1,7 @@
 import {Component, EventEmitter, inject, OnInit, Output} from '@angular/core';
 import {SidebarItems} from '../../constants/index.constants';
 import {NavigationEnd, Router, RouterLink} from '@angular/router';
-import {NgClass, NgIf} from '@angular/common';
+import {NgClass} from '@angular/common';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 @Component({
@@ -10,7 +10,6 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
     RouterLink,
     NgClass,
     ScrollPanelModule,
-    NgIf,
   ],
   templateUrl: './sidebar.html',
   styles: ``
@@ -30,11 +29,14 @@ export class Sidebar implements OnInit{
 
 
   getActiveIdFromRoute(): number | null {
-    // const currentUrl = this.router.url;
-    // const matchedItem = this.sidebarItems
-    //   .find(item => currentUrl.includes(''));
-    // return matchedItem?.Id ?? null;
-    return 1;
+    const currentUrl = this.router.url;
+    for (const group of this.sidebarItems) {
+      const matchedItem = group.items.find(item => currentUrl.includes(item.route));
+      if (matchedItem) {
+        return matchedItem.Id;
+      }
+    }
+    return null;
   }
 
   ngOnInit(): void {
@@ -46,12 +48,13 @@ export class Sidebar implements OnInit{
     });
   }
 
-  setActive(item: any) {
-    this.router.navigate!([item.route]);
+  setActive(item: any): void {
+    this.router.navigate([item.route]);
     this.activeId = item.Id;
   }
 
-  togglePin() {
+
+  togglePin(): void {
     this.isPinned = !this.isPinned;
     this.pinnedChange.emit(this.isPinned);
   }

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
+import {Sidebar} from '../sidebar/sidebar';
 import {Header} from '../header/header';
 import {NgClass} from '@angular/common';
-import {Sidebar} from '../sidebar/sidebar';
 
 @Component({
   selector: 'app-dashboard-layout',
   imports: [
+    Sidebar,
     Header,
-    NgClass,
-    Sidebar
+    NgClass
   ],
   templateUrl: './dashboard-layout.html',
   styles: ``
